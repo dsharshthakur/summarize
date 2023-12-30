@@ -32,7 +32,7 @@ def generate_response(text, language = None):
     chain= load_summarize_chain(llm = model , chain_type="stuff" ,prompt = prompt, verbose = False)
     
     #generate
-    response = chain.run(docs, language = language)
+    response = chain.run({"text":doc, "language" = language})
     
     return  response
 
