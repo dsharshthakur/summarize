@@ -59,8 +59,7 @@ elif chck_box2 == True:
    chck_box1 = False
    lang = st.text_input(label = "Enter the language to translate in." , value = None)
 
-
-   if lang != None:
+if lang != None:
    try:
       st.markdown("<h4>Response:</h4>", unsafe_allow_html = True)
       answer = generate_response(user_text, lang)
