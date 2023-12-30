@@ -40,8 +40,7 @@ def generate_response(text, language = None):
 st.markdown("<br>" , unsafe_allow_html = True)
 
 lang = None
-def lang_input():
-   lang = st.text_input(label = "Enter the language to translate in." , value = None)
+
    
 col1 , col2 , col3 ,col4= st.columns(4)
 with col2:
@@ -55,6 +54,9 @@ if generatebtn:
     answer = generate_response(user_text)
     st.info(answer)
     st.write(f"You wrote {len(user_text)} characters.")
+
+if translate == True:
+   lang = st.text_input(label = "Enter the language to translate in." , value = None)
 
    
 
@@ -71,5 +73,5 @@ if lang != None:
  
     
     
-
+st.write(st.session_state)
     
