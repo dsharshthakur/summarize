@@ -42,7 +42,7 @@ st.markdown("<br>" , unsafe_allow_html = True)
    
 col1 , col2 , col3 ,col4= st.columns(4)
 with col2:
-    cbox = st.radio(label = "Choose an option:" , options =["Summarize" , "Translate"])
+    chck_box = st.radio(label = "Choose an option:" , options =["Summarize" , "Translate"])
 
 if  chck_box == "Summarize":
     st.markdown("<h4>Response:</h4>", unsafe_allow_html = True)
