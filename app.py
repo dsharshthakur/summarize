@@ -53,20 +53,20 @@ if generatebtn:
     st.info(answer)
     st.write(f"You wrote {len(user_text)} characters.")
 
+lang = None  
 if translatebtn == True:
-    generatebtn = False
-    lang = st.text_input(label = "Enter the language to translate in." , value = "")
-    submit = st.button(label = "submit", key = "submit")
-    
-    if lang != "":
-        try:
-            st.markdown("<h4>Response:</h4>", unsafe_allow_html = True)
-            answer = generate_response(user_text, lang)
-            st.info(answer)
-            st.write(lang)
-        except:
-            st.warning("Cannot translate in this language.")
-    
+    lang = st.text_input(label = "Enter the language to translate in." , value = None)
+    submit = st.button(label = "submit", key = "submit") 
+
+if lang != None:
+   try:
+      st.markdown("<h4>Response:</h4>", unsafe_allow_html = True)
+      answer = generate_response(user_text, lang)
+      st.info(answer)
+      st.write(lang)
+  except:
+      st.warning("Cannot translate in this language.")
+ 
     
     
 
