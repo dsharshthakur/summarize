@@ -53,7 +53,7 @@ if  chck_box1 == True and submit_btn == True:
    chck_box2 == False
    st.markdown("<h4>Response:</h4>", unsafe_allow_html = True)
    answer = generate_response(user_text)
-   st.succes(answer)
+   st.success(answer)
    st.write(f"You wrote {len(user_text)} characters.")
 
 elif chck_box2 == True and submit_btn == True:
@@ -70,6 +70,5 @@ if lang != None:
       st.warning("Cannot translate in this language.")
  
     
-    
-st.write(st.session_state)
+
     
