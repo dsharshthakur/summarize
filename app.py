@@ -16,9 +16,9 @@ key = st.secrets["PROJECT_KEY"]
 #model
 model = ChatGoogleGenerativeAI(model = "gemini-pro" , google_api_key = key)
 
-def generate_response(text, language = None):
+def generate_response(text, language = ""):
     #template
-    if language is not  None:
+    if language != "":
         template = '''Translate the given text in {language}.The text is:\n{text}'''
         prompt = PromptTemplate(input_variables = ["text"], template = template)
     
@@ -55,10 +55,10 @@ if generatebtn:
 
 if translatebtn == True:
     generatebtn = False
-    lang = st.text_input(label = "Enter the language to translate in." , value = None )
+    lang = st.text_input(label = "Enter the language to translate in." , value = "")
     submit = st.button(label = "submit", key = "submit")
     
-    if lang != None:
+    if lang != "":
         try:
             st.markdown("<h4>Response:</h4>", unsafe_allow_html = True)
             answer = generate_response(user_text, lang)
