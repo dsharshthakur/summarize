@@ -18,7 +18,7 @@ model = ChatGoogleGenerativeAI(model = "gemini-pro" , google_api_key = key)
 def generate_response(text):
     #template
 
-    template = '''You are a helpfull assistant that summarizes a large text in such a way that it can be easily understood by any user.
+    template = '''You are a helpfull assistant that summarizes a large text in such a way that it can be easily understood by any user.Also add appropriate main heading.
     The text is :\n{text}'''
     prompt = PromptTemplate(input_variables = ["text"], template = template)
 
