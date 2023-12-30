@@ -40,9 +40,9 @@ st.markdown("<br>" , unsafe_allow_html = True)
 
 
    
-col1 , col2 , col3 = st.columns(3)
+col1 , col2 , col3 = st.columns([0.1,0.8,0.1])
 with col2:
-    radio_btn = st.radio(label ="Choosee an optionL:" ,options= ["Summarize","Translate"], horizontal = True)
+    radio_btn = st.radio(label ="Choose an option:" ,options= ["Summarize","Translate"], horizontal = True)
 
 submit_btn = st.button(label = "submit")
 
