@@ -55,7 +55,7 @@ if generatebtn:
     st.info(answer)
     st.write(f"You wrote {len(user_text)} characters.")
 
-if translate == True:
+if translatebtn == True:
    lang = st.text_input(label = "Enter the language to translate in." , value = None)
 
    
