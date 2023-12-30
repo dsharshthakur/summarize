@@ -54,7 +54,7 @@ if  radio_btn == "Summarize" and submit_btn == True:
    st.success(answer)
    st.write(f"You wrote {len(user_text)} characters.")
 
-elif radio_btn == "Translate" and submit_btn == True:
+elif radio_btn == "Translate":
    lang = st.text_input(label = "Enter the language to translate in." , value = None)
 
 if lang != None:
