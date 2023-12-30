@@ -13,7 +13,7 @@ st.markdown("<h2 style = 'text-align:center'>TranscribeMate</h2>", unsafe_allow_
 st.markdown("<br>" , unsafe_allow_html = True)
 st.markdown("<br>" , unsafe_allow_html = True)
 
-user_text = st.text_area(label = "Copy paste the text here:" ,height = 200, value = " " )
+user_text = st.text_area(label = "Copy & paste the text here:" ,height = 200, value = " " )
 
 #key
 key = st.secrets["PROJECT_KEY"]
