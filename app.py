@@ -1,4 +1,4 @@
-
+:
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 from langchain.chains.summarize import load_summarize_chain
@@ -21,7 +21,7 @@ def generate_response(text, language = None):
         template = '''Translate the given text in {language}.The text is:\n{text}'''
         prompt = PromptTemplate(input_variables = ["text"], template = template)
     
-    if  st.session_state["summarize"] == True
+    if  st.session_state["summarize"] == True:
         template = '''You are a helpfull assistant that summarizes a large text in such a way that it can be easily understood by any user.Also add appropriate main heading.
         The text is :\n{text}'''
         prompt = PromptTemplate(input_variables = ["text"], template = template)
