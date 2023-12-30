@@ -15,28 +15,48 @@ key = st.secrets["PROJECT_KEY"]
 #model
 model = ChatGoogleGenerativeAI(model = "gemini-pro" , google_api_key = key)
 
-def generate_response(text):
+def generate_response(text, language = None):
     #template
-
-    template = '''You are a helpfull assistant that summarizes a large text in such a way that it can be easily understood by any user.Also add appropriate main heading.
-    The text is :\n{text}'''
-    prompt = PromptTemplate(input_variables = ["text"], template = template)
+    if translate == True:
+        template = '''Translate the given text in {language}.The text is:\n{text}'''
+        prompt = PromptTemplate(input_variables = ["text", "language"], template = template)
+    
+    else:        
+        template = '''You are a helpfull assistant that summarizes a large text in such a way that it can be easily understood by any user.Also add appropriate main heading.
+        The text is :\n{text}'''
+        prompt = PromptTemplate(input_variables = ["text"], template = template)
 
     docs = [Document(page_content = text)]
+    
     #chain
     chain= load_summarize_chain(llm = model , chain_type="stuff" ,prompt = prompt, verbose = False)
+    
     #generate
     response = chain.run(docs)
+    
     return  response
 
 st.markdown("<br>" , unsafe_allow_html = True)
 
-col1 , col2 , col3 = st.columns(3)
+col1 , col2 , col3 ,col4= st.columns(4)
 with col2:
-    generatebtn = st.button(label = "Start", use_container_width=True)
+    generatebtn = st.button(label = "Summarize", use_container_width=True)
+with col3:
+    translatebtn = st.button(label = "Translate" , use_container_width = True)
 
 if generatebtn:
     st.markdown("<h4>Response:</h4>", unsafe_allow_html = True)
     answer = generate_response(user_text)
     st.info(answer)
     st.write(f"You wrote {len(user_text)} characters.")
+
+if translatebtn == True:
+    generatebtn == False
+    lang = st.text_input(label = "Enter the language to translate in.")
+    answer = generate_response(user_text, lang)
+    st.info(answer)
+    
+    
+    
+
+    
