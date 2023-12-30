@@ -1,5 +1,4 @@
-import os
-from dotenv import load_dotenv
+
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 from langchain.chains.summarize import load_summarize_chain
@@ -7,15 +6,14 @@ from langchain.text_splitter import  RecursiveCharacterTextSplitter
 from langchain.docstore.document import Document
 import streamlit as st
 
-st.title("Summarization")
+st.markdown("<h2>Summarize Any text</h2>", unsafe_allow_html = True)
 user_text = st.text_area(label = "Copy paste the text here:" ,height = 200)
 
 #key
-load_dotenv()
-project_key = os.environ["key"]
+key = st.secrets["PROJECT_KEY"]
 
 #model
-model = ChatGoogleGenerativeAI(model = "gemini-pro" , google_api_key = project_key)
+model = ChatGoogleGenerativeAI(model = "gemini-pro" , google_api_key = key)
 
 def generate_response(text):
     #template
