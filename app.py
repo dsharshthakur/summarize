@@ -6,8 +6,7 @@ from langchain.text_splitter import  RecursiveCharacterTextSplitter
 from langchain.docstore.document import Document
 import streamlit as st
 
-translatebtn = None
-lang = None
+
 st.markdown("<h2 style = 'text-align:center'>Text Summarization</h2>", unsafe_allow_html = True)
 user_text = st.text_area(label = "Copy paste the text here:" ,height = 200)
    
