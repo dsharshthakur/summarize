@@ -40,7 +40,7 @@ st.markdown("<br>" , unsafe_allow_html = True)
 
 
    
-col1 , col2 , col3 = st.columns([0.25,0.5,0.25])
+col1 , col2 , col3 = st.columns([0.32,0.36,0.32])
 with col2:
     radio_btn = st.radio(label ="Choose an option:" ,options= ["Summarize","Translate"], horizontal = True)
 
