@@ -42,7 +42,7 @@ st.markdown("<br>" , unsafe_allow_html = True)
    
 col1 , col2 , col3 ,col4= st.columns(4)
 with col2:
-    radion_btn = st.radio(label ="Choosee an optionL:" ,options= ["Summarize","Translate"], horizontal = True)
+    radio_btn = st.radio(label ="Choosee an optionL:" ,options= ["Summarize","Translate"], horizontal = True)
 
 submit_btn = st.button(label = "submit")
 
@@ -54,8 +54,7 @@ if  radio_btn == "Summarize" and submit_btn == True:
    st.success(answer)
    st.write(f"You wrote {len(user_text)} characters.")
 
-elif chck_box2 == "Translate" and submit_btn == True:
-   chck_box1 = False
+elif radio_btn == "Translate" and submit_btn == True:
    lang = st.text_input(label = "Enter the language to translate in." , value = None)
 
 if lang != None:
