@@ -60,6 +60,7 @@ if translatebtn == True:
             st.markdown("<h4>Response:</h4>", unsafe_allow_html = True)
             answer = generate_response(user_text, lang)
             st.info(answer)
+            st.write(lang)
         except:
             st.warning("Cannot translate in this language.")
     
