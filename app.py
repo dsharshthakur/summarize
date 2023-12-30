@@ -6,9 +6,13 @@ from langchain.text_splitter import  RecursiveCharacterTextSplitter
 from langchain.docstore.document import Document
 import streamlit as st
 
+translatebtn = None
+
 st.markdown("<h2 style = 'text-align:center'>Text Summarization</h2>", unsafe_allow_html = True)
 user_text = st.text_area(label = "Copy paste the text here:" ,height = 200)
-
+if translatebtn != None:
+    lang = st.text_input(label = "Enter the language to translate in." , value = None )
+   
 #key
 key = st.secrets["PROJECT_KEY"]
 
@@ -38,6 +42,7 @@ def generate_response(text, language = None):
 
 st.markdown("<br>" , unsafe_allow_html = True)
 
+
 col1 , col2 , col3 ,col4= st.columns(4)
 with col2:
     generatebtn = st.button(label = "Summarize", use_container_width=True, key = "summarize")
@@ -53,8 +58,6 @@ if generatebtn:
 
 if translatebtn == True:
     generatebtn = False
-    
-    lang = st.text_input(label = "Enter the language to translate in." , value = None )
     
     if lang!= None:
         try:
