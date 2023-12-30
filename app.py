@@ -53,9 +53,15 @@ if generatebtn:
 
 if translatebtn == True:
     generatebtn = False
+    
     lang = st.text_input(label = "Enter the language to translate in.")
-    answer = generate_response(user_text, lang)
-    st.info(answer)
+    st.markdown("<h4>Response:</h4>", unsafe_allow_html = True)
+    if lang!= " ":
+        try:
+            answer = generate_response(user_text, lang)
+            st.info(answer)
+        except:
+            st.warning("Cannot translate in this language.")
     
     
     
