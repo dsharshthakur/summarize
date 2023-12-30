@@ -11,7 +11,8 @@ lang = None
 st.markdown("<h2 style = 'text-align:center'>Text Summarization</h2>", unsafe_allow_html = True)
 user_text = st.text_area(label = "Copy paste the text here:" ,height = 200)
 if translatebtn != None:
-    lang = st.text_input(label = "Enter the language to translate in." , value = None )
+    with st.empty():
+        lang = st.text_input(label = "Enter the language to translate in." , value = None )
    
 #key
 key = st.secrets["PROJECT_KEY"]
