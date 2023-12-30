@@ -8,7 +8,7 @@ import streamlit as st
 
 
 st.markdown("<h2 style = 'text-align:center'>Text Summarization</h2>", unsafe_allow_html = True)
-user_text = st.text_area(label = "Copy paste the text here:" ,height = 200)
+user_text = st.text_area(label = "Copy paste the text here:" ,height = 200, value = " " )
 
 #key
 key = st.secrets["PROJECT_KEY"]
