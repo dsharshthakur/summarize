@@ -19,7 +19,7 @@ def generate_response(text, language = None):
     #template
     if translatebtn == True:
         template = '''Translate the given text in {language}.The text is:\n{text}'''
-        prompt = PromptTemplate(input_variables = ["text", "language"], template = template)
+        prompt = PromptTemplate(input_variables = ["text"], template = template)
     
     else:        
         template = '''You are a helpfull assistant that summarizes a large text in such a way that it can be easily understood by any user.Also add appropriate main heading.
@@ -32,7 +32,7 @@ def generate_response(text, language = None):
     chain= load_summarize_chain(llm = model , chain_type="stuff" ,prompt = prompt, verbose = False)
     
     #generate
-    response = chain.run(docs)
+    response = chain.run(docs, language)
     
     return  response
 
