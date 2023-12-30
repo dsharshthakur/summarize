@@ -46,7 +46,7 @@ with col2:
 
 col1 , col2 , col3 = st.columns(3)
 with col2:
-   submit_btn = st.button(label = "submit", use_column_width = True)
+   submit_btn = st.button(label = "submit", use_container_width = True)
 
 
 lang = None
