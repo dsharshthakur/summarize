@@ -47,7 +47,7 @@ col1 , col2 , col3 ,col4= st.columns(4)
 with col2:
     generatebtn = st.button(label = "Summarize", use_container_width=True, key = "summarize")
 with col3:
-    translatebtn = st.button(label = "Translate" , use_container_width = True, key = "translate", on_change = lang_input)
+    translatebtn = st.button(label = "Translate" , use_container_width = True, key = "translate", on_click = lang_input)
 
 if generatebtn:
     translatebtn == False
