@@ -10,9 +10,6 @@ translatebtn = None
 lang = None
 st.markdown("<h2 style = 'text-align:center'>Text Summarization</h2>", unsafe_allow_html = True)
 user_text = st.text_area(label = "Copy paste the text here:" ,height = 200)
-if translatebtn != None:
-    with st.empty():
-        lang = st.text_input(label = "Enter the language to translate in." , value = None )
    
 #key
 key = st.secrets["PROJECT_KEY"]
@@ -59,8 +56,10 @@ if generatebtn:
 
 if translatebtn == True:
     generatebtn = False
+    lang = st.text_input(label = "Enter the language to translate in." , value = None )
+    submit = st.button(label = "submit")
     
-    if lang!= None:
+    if submit == True and lang!= None:
         try:
             st.markdown("<h4>Response:</h4>", unsafe_allow_html = True)
             answer = generate_response(user_text, lang)
