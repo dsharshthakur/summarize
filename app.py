@@ -55,7 +55,7 @@ if generatebtn:
 
 lang = None  
 if translatebtn == True:
-    lang = st.text_input(label = "Enter the language to translate in." , value = None)
+   lang = st.text_input(label = "Enter the language to translate in." , value = None)
    st.info(lang)      
 
 st.info(lang)
