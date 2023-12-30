@@ -18,7 +18,7 @@ model = ChatGoogleGenerativeAI(model = "gemini-pro" , google_api_key = key)
 
 def generate_response(text, language = None):
     #template
-    if st.session_state["submit"] == True and language is not  None:
+    if language is not  None:
         template = '''Translate the given text in {language}.The text is:\n{text}'''
         prompt = PromptTemplate(input_variables = ["text"], template = template)
     
