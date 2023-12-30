@@ -17,7 +17,7 @@ model = ChatGoogleGenerativeAI(model = "gemini-pro" , google_api_key = key)
 
 def generate_response(text, language = None):
     #template
-    if translate == True:
+    if translatebtn == True:
         template = '''Translate the given text in {language}.The text is:\n{text}'''
         prompt = PromptTemplate(input_variables = ["text", "language"], template = template)
     
@@ -45,13 +45,14 @@ with col3:
     translatebtn = st.button(label = "Translate" , use_container_width = True)
 
 if generatebtn:
+    translatebtn = False 
     st.markdown("<h4>Response:</h4>", unsafe_allow_html = True)
     answer = generate_response(user_text)
     st.info(answer)
     st.write(f"You wrote {len(user_text)} characters.")
 
 if translatebtn == True:
-    generatebtn == False
+    generatebtn = False
     lang = st.text_input(label = "Enter the language to translate in.")
     answer = generate_response(user_text, lang)
     st.info(answer)
