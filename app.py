@@ -46,21 +46,21 @@ with col2:
 with col3:
     chck_box2 = st.checkbox(label = "Translate")
 
-submit_btn = st.button(label = "Sumbit")
 
 lang = None
-if  chck_box1 == True and submit_btn == True:
+if  chck_box1 == True:
    chck_box2 == False
    st.markdown("<h4>Response:</h4>", unsafe_allow_html = True)
    answer = generate_response(user_text)
    st.success(answer)
    st.write(f"You wrote {len(user_text)} characters.")
 
-elif chck_box2 == True and submit_btn == True:
+elif chck_box2 == True:
+   chck_box1 = False
    lang = st.text_input(label = "Enter the language to translate in." , value = None)
 
 
-if lang != None:
+   if lang != None:
    try:
       st.markdown("<h4>Response:</h4>", unsafe_allow_html = True)
       answer = generate_response(user_text, lang)
