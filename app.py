@@ -9,7 +9,7 @@ import streamlit as st
 
 st.markdown("<h2 style = 'text-align:center'>Text Summarization</h2>", unsafe_allow_html = True)
 user_text = st.text_area(label = "Copy paste the text here:" ,height = 200)
-   
+
 #key
 key = st.secrets["PROJECT_KEY"]
 
@@ -50,13 +50,13 @@ with col2:
 
 
 lang = None
-if  radio_btn == "Summarize" and submit_btn == True:
+if  radio_btn == "Summarize" and submit_btn == True and user_text != " ":
    st.markdown("<h4>Response:</h4>", unsafe_allow_html = True)
    answer = generate_response(user_text)
    st.success(answer)
    st.write(f"You wrote {len(user_text)} characters.")
 
-elif radio_btn == "Translate":
+elif radio_btn == "Translate" and user_text = " ":
    lang = st.text_input(label = "Enter the language to translate in." , value = None)
 
 if lang != None:
