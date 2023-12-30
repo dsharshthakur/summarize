@@ -42,20 +42,19 @@ st.markdown("<br>" , unsafe_allow_html = True)
    
 col1 , col2 , col3 ,col4= st.columns(4)
 with col2:
-    chck_box1 = st.checkbox(label = " Summarize", value = False)
-with col3:
-    chck_box2 = st.checkbox(label = "Translate", value = False)
+    radion_btn = st.radio(label = ,options= ["Summarize","Translate"])
+
+submit_btn = st.submit(label = "submit")
 
 
 lang = None
-if  chck_box1 == True:
-   chck_box2 == False
+if  radio_btn == "Summarize" and submit_btn == True:
    st.markdown("<h4>Response:</h4>", unsafe_allow_html = True)
    answer = generate_response(user_text)
    st.success(answer)
    st.write(f"You wrote {len(user_text)} characters.")
 
-elif chck_box2 == True:
+elif chck_box2 == "Translate" and submit_btn == True:
    chck_box1 = False
    lang = st.text_input(label = "Enter the language to translate in." , value = None)
 
