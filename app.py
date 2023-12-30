@@ -44,10 +44,14 @@ col1 , col2 , col3 = st.columns([0.32,0.36,0.32])
 with col2:
     radio_btn = st.radio(label ="Choose an option:" ,options= ["Summarize","Translate"], horizontal = True)
 
+st.markdown("<br>", unsafe_allow_html = True)
+   
 col1 , col2 , col3 = st.columns(3)
 with col2:
    submit_btn = st.button(label = "submit", use_container_width = True)
+    
 
+st.markdown("<br>", unsafe_allow_html = True)
 
 lang = None
 if  radio_btn == "Summarize" and submit_btn == True and user_text != " ":
