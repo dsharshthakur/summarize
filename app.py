@@ -1,4 +1,4 @@
-:
+
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 from langchain.chains.summarize import load_summarize_chain
