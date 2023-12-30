@@ -53,7 +53,7 @@ if generatebtn:
 if translatebtn == True:
     generatebtn = False
     
-    lang = st.text_input(label = "Enter the language to translate in.")
+    lang = st.text_input(label = "Enter the language to translate in.", value  = " " )
     
     if lang!= " ":
         try:
