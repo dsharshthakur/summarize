@@ -45,6 +45,7 @@ with col3:
     translatebtn = st.button(label = "Translate" , use_container_width = True, key = "translate")
 
 if generatebtn:
+    translatebtn == False
     st.markdown("<h4>Response:</h4>", unsafe_allow_html = True)
     answer = generate_response(user_text)
     st.info(answer)
