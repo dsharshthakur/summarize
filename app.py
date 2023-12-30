@@ -64,7 +64,7 @@ if lang != None:
       answer = generate_response(user_text, lang)
       st.info(answer)
       st.write(lang)
-  except:
+   except:
       st.warning("Cannot translate in this language.")
  
     
