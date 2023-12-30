@@ -57,7 +57,7 @@ lang = None
 if translatebtn == True:
     lang = st.text_input(label = "Enter the language to translate in." , value = None)
 
-
+st.info(lang)
 if lang != None:
    st.write(lang)
    try:
