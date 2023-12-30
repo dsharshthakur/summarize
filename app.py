@@ -42,9 +42,9 @@ st.markdown("<br>" , unsafe_allow_html = True)
    
 col1 , col2 , col3 ,col4= st.columns(4)
 with col2:
-    chck_box1 = st.checkbox(label = " Summarize")
+    chck_box1 = st.checkbox(label = " Summarize", value = False)
 with col3:
-    chck_box2 = st.checkbox(label = "Translate")
+    chck_box2 = st.checkbox(label = "Translate", value = False)
 
 
 lang = None
