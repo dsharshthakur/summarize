@@ -58,7 +58,7 @@ if translatebtn == True:
     lang = st.text_input(label = "Enter the language to translate in." , value = None )
     submit = st.button(label = "submit", key = "submit")
     
-    if submit == True:
+    if lang != None:
         try:
             st.markdown("<h4>Response:</h4>", unsafe_allow_html = True)
             answer = generate_response(user_text, lang)
