@@ -39,7 +39,7 @@ def generate_response(text, language = None):
 
 st.markdown("<br>" , unsafe_allow_html = True)
 
-
+lang = None
 def lang_input():
    lang = st.text_input(label = "Enter the language to translate in." , value = None)
    
