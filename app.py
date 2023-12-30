@@ -44,7 +44,9 @@ col1 , col2 , col3 = st.columns([0.32,0.36,0.32])
 with col2:
     radio_btn = st.radio(label ="Choose an option:" ,options= ["Summarize","Translate"], horizontal = True)
 
-submit_btn = st.button(label = "submit")
+col1 , col2 , col3 = st.columns(3)
+with col2:
+   submit_btn = st.button(label = "submit", use_column_width = True)
 
 
 lang = None
